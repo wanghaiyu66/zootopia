@@ -11,12 +11,12 @@ public:
     ~Map(){};
     
     // public member function
-    int getWidth()
+    int getWidth() const
     {
         return width_;
     }
 
-    int getHeight()
+    int getHeight() const
     {
         return height_;
     }

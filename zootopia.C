@@ -8,7 +8,9 @@ int main()
     int nDays = 10;
 
     Map map(100, 100);
-    Rabbit a(map);
+    vector<int> pos={1,0};
+    Rabbit a(map, pos);
+     a.view();
     Grass g;
     // days
     for (int i = 0; i < nDays; i++)
@@ -19,6 +21,8 @@ int main()
             {
                 a.starving();
                 a.eat(g);
+               
+                a.run();
                 if (!a.isAlive())
                 {
                     cout<< "The rabbit died in day "

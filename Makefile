@@ -1,11 +1,11 @@
-output: nature.o Map.o Grass.o Rabbit.o
-	clang++ nature.o Map.o Grass.o Rabbit.o -o nature
+output: zootopia.o Map.o Grass.o Rabbit.o
+	clang++ zootopia.o Map.o Grass.o Rabbit.o -o zootopia
 
-nature.o: nature.C
-	clang++ -c nature.C
+nature.o: zootopia.C
+	clang++ -c zootopia.C
 
 Rabbit.o: Rabbit.C Rabbit.H
-	clang++ -c Rabbit.C
+	clang++ -c -std=c++2a Rabbit.C
 
 Grass.o: Grass.C Grass.H
 	clang++ -c Grass.C

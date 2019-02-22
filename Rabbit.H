@@ -2,6 +2,8 @@
 #define Rabbit_H
 
 #include <iostream>
+#include <vector>
+#include <random>
 #include "Map.H"
 #include "Grass.H"
 using namespace std;
@@ -17,9 +19,13 @@ class Rabbit
     double eatingRate_;
     int ageLimit_; // days
     double age_;   // seconds
+protected:
+    vector<int> pos_;
+    vector<vector<int> > view_;
 public:
     // constructors
-    Rabbit(Map map);
+    Rabbit(const Map& map);
+    Rabbit(const Map& map, const vector<int>& pos);
 
     ~Rabbit()
     {
@@ -30,6 +36,9 @@ public:
     bool isAlive();
     void starving();
     void eat(Grass& grass);
+    void view();
+    void run();
+
 };
 
 
